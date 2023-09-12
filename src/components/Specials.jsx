@@ -1,5 +1,8 @@
 import { MdDeliveryDining } from "react-icons/md"
 import Food from "../assets/food.jpg";
+import Bruschetta from "../assets/bruschetta.jpg";
+import Food3 from "../assets/Food3.jpg";
+
 const Specials = () => {
     return (
         <section className="specials-container" id="specials">
@@ -18,7 +21,7 @@ const Specials = () => {
                     <a href="#order" className="order-online">Order Online<MdDeliveryDining /></a>
                 </article>
                 <article className="specials-item">
-                    <img src={Food} alt="Greek Salad"/>
+                    <img src={Bruschetta} alt="Greek Salad"/>
                     <div>
                         <h3>Greek Salad</h3>
                         <p className="price">$12.99</p>
@@ -27,7 +30,7 @@ const Specials = () => {
                     <a href="#order" className="order-online">Order Online<MdDeliveryDining /></a>
                 </article>
                 <article className="specials-item">
-                    <img src={Food} alt="Greek Salad"/>
+                    <img src={Food3} alt="Greek Salad"/>
                     <div>
                         <h3>Greek Salad</h3>
                         <p className="price">$12.99</p>

@@ -10,22 +10,22 @@ const Navbar = () => {
     return (
         <nav>
             <AiOutlineMenu className="menu" size={"25px"} onClick={() => setMenu(!menu)}/>
-            <img src={Logo} alt="Little Lemon Logo" />
+            <Link to={"/"}><img src={Logo} alt="Little Lemon Logo" /></Link>
             <ul className="navLinks">
-                <Link to={"/"}>Home</Link>
-                <Link to={"/#about"}>About</Link>
-                <Link to={"/#specials"}>Menu</Link>
-                <Link to={"/booking"}>Reservations</Link>
-                <li>Order online</li>
-                <li>Login</li>
+                <li><Link to={"/"}>Home</Link></li>
+                <li><Link to={"/"}>About</Link></li>
+                <li><Link to={"/"}>Menu</Link></li>
+                <li><Link to={"/booking"}>Reservations</Link></li>
+                <li><Link to={"/"}>Order online</Link></li>
+                <li><Link to={"/"}>Login</Link></li>
             </ul>
             {menu && <ul className="mobileLinks">
-                <li>Home</li>
-                <li>About</li>
-                <li>Menu</li>
-                <li>Reservations</li>
-                <li>Order online</li>
-                <li>Login</li>
+                <li><Link to={"/"}>Home</Link></li>
+                <li><Link to={"/"}>About</Link></li>
+                <li><Link to={"/"}>Menu</Link></li>
+                <li><Link to={"/booking"}>Reservations</Link></li>
+                <li><Link to={"/"}>Order online</Link></li>
+                <li><Link to={"/"}>Login</Link></li>
             </ul>}
         </nav>
     )

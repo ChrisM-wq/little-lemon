@@ -94,7 +94,7 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
             <select id="occasion" value={formData.occasion} onChange={handleChange}>
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
-                <option value="Anniversary">Other</option>
+                <option value="Other" selected>Other</option>
             </select>
             <input id="submit" type="submit" value="Make Your reservation" aria-label="On Click" />
         </form>

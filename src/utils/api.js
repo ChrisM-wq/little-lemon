@@ -23,5 +23,6 @@ export function fetchAPI(date) {
 };
 
 export function submitAPI(formData) {
+    localStorage.setItem('booking', JSON.stringify(formData));
     return true;
 };

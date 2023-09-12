@@ -1,7 +1,8 @@
 import Logo from "../assets/footer-logo.png";
-import { AiFillInstagram, AiFillPhone } from "react-icons/ai";
+import { AiFillPhone } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { BsFacebook, BsTwitter, BsPinFill, BsInstagram } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -10,11 +11,11 @@ const Footer = () => {
             <div>
                 <h2>Little Lemon</h2>
                 <ul className="footerNavigations">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#specials">Menu</a></li>
-                    <li><a href="#about">Reservations</a></li>
-                    <li><a href="#about">Order online</a></li>
+                    <li><Link to={"/"}>Home</Link></li>
+                    <li><Link to={"/"}>About</Link></li>
+                    <li><Link to={"/"}>Menu</Link></li>
+                    <li><Link to={"/booking"}>Reservations</Link></li>
+                    <li><Link to={"/"}>Order online</Link></li>
                 </ul>
             </div>
             <div>
