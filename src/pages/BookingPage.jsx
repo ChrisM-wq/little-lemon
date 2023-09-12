@@ -43,7 +43,9 @@ const BookingPage = () => {
     const [availableTimes, dispatch] = useReducer(reducer, initializeTimes(date));
 
     return (
-        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+        <main className="form-page">
+            <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+        </main>
     )
 }
 

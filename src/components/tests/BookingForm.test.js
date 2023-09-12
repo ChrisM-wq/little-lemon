@@ -52,8 +52,8 @@ describe('BookingForm', () => {
 
     // Check if submitForm is called with the correct form data
     expect(mockSubmitForm).toHaveBeenCalledWith({
-      date: '2023-09-12',
-      time: '18:00',
+      date: '2023-09-23',
+      time: '19:00',
       guests: '4',
       occasion: 'Birthday',
     });

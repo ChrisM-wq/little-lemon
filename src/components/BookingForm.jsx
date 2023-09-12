@@ -4,37 +4,76 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
 
     const [formData, setFormData] = useState({
         date: "",
-        time: '17:00',
+        time: availableTimes[0],
         guests: '2',
         occasion: 'Other'
     });
+
+    const [errors, setErrors] = useState({
+        date: "",
+        guests: "",
+    });
+
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors = {};
+
+        // Validate date
+        const currentDate = new Date();
+        const selectedDate = new Date(formData.date);
+
+        if (selectedDate < currentDate) {
+          newErrors.date = "Selected date must be in the future";
+          isValid = false;
+        } else {
+          newErrors.date = "";
+        }
+
+        // Validate guests
+        if (formData.guests < 1 || formData.guests > 10) {
+          newErrors.guests = "Number of guests must be between 1 and 10";
+          isValid = false;
+        } else {
+          newErrors.guests = "";
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
 
     const handleChange = (e) => {
         const { id, value } = e.target;
         setFormData({
             ...formData,
-            [id]: value
+            [id]: value,
+        });
+        setErrors({
+            ...errors,
+            [id]: "",
         });
         if (id === "date") {
-            dispatch({ type: 'UPDATE_TIMES', payload: value });
+            dispatch({ type: "UPDATE_TIMES", payload: value });
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
-        submitForm(formData);
+        if (validateForm()) {
+          console.log(formData);
+          submitForm(formData);
+        }
     };
 
     return (
         <>
         <h1>Book a Table</h1>
-        <form styles={"display: grid; max-width: 200px; gap: 20px"} onSubmit={handleSubmit}>
+        <form className="booking-form" onSubmit={handleSubmit}>
             <label htmlFor="date">Date</label>
             <input type="date" id="date" value={formData.date} onChange={handleChange} required/>
+            <span className="error">{errors.date}</span>
             <label htmlFor="time">Time</label>
             <select id="time" value={formData.time} onChange={handleChange}>
-                {availableTimes.map((time) => (
+                {availableTimes.map((time, index) => (
                     <option key={time} value={time}>
                         {time}
                     </option>
@@ -50,13 +89,14 @@ const BookingForm = ({availableTimes, dispatch, submitForm}) => {
                 value={formData.guests}
                 onChange={handleChange}
             />
+            <span className="error">{errors.guests}</span>
             <label htmlFor="occasion">Occasion</label>
             <select id="occasion" value={formData.occasion} onChange={handleChange}>
                 <option value="Birthday">Birthday</option>
                 <option value="Anniversary">Anniversary</option>
                 <option value="Anniversary">Other</option>
             </select>
-            <input type="submit" value="Make Your reservation" />
+            <input id="submit" type="submit" value="Make Your reservation" aria-label="On Click" />
         </form>
         </>
     )

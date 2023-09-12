@@ -1,8 +1,10 @@
-
 main {
-    display: flex;
     min-height: calc(100vh - 80px - 250px - 2rem);
-    flex-grow: 1;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
 }
 
 
@@ -507,4 +509,68 @@ footer > div, footer > img {
     .about-images {
         margin-top: 0;
     }
+}
+
+
+
+.form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+}
+
+.booking-form label {
+    padding: 0 0 0.5rem 0;
+}
+
+.booking-form input, .booking-form select {
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+}
+
+#submit {
+    border: 0;
+    color: #333;
+    background-color: #F4CE14;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 20px;
+    padding: 1rem 2rem;
+}
+
+#submit:hover {
+    background-color: #ee9972;
+}
+
+.confirmation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.confirmation-page h1 {
+    color: #495e57;
+}
+
+.confirmation-page p {
+    font-size: 20px;
+}
+
+.confirm-location {
+    padding: 2rem;
+    border: #495e57 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    gap: 1rem;
 }
