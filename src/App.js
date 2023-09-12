@@ -1,16 +1,20 @@
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/Navbar';
 import './App.css';
 import Footer from './components/Footer';
-import Hero from './components/Hero/Hero';
-import Testimonials from './components/Testimonials/Testimonials';
+import { Route, Routes } from 'react-router-dom';
+import BookingPage from './pages/BookingPage';
+import HomePage from './pages/HomePage';
+import ConfirmedBooking from './pages/ConfirmedBooking';
 
 function App() {
   return (
     <>
         <Navbar />
-        <Hero />
-        <main>Hello</main>
-        <Testimonials />
+        <Routes>
+            <Route path='/' element={<HomePage />}/>
+            <Route path="/booking" element={<BookingPage />} />
+            <Route path="/confirmed" element={<ConfirmedBooking />} />
+        </Routes>
         <Footer />
     </>
   );
